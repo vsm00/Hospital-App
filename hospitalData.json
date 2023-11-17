@@ -1,0 +1,18 @@
+[
+    {
+      "name": "City General Hospital",
+      "patientCount": 150,
+      "location": "Trivandrum"
+    },
+    {
+      "name": "Central Medical Center",
+      "patientCount": 200,
+      "location": "kolam"
+    },
+    {
+      "name": "Regional Health Clinic",
+      "patientCount": 100,
+      "location": "Attingal"
+    }
+  ]
+  
