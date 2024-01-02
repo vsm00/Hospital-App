@@ -1,0 +1,105 @@
+[{
+  "name": "Ahalia Foundation Eye Hospital",
+  "patient_count": 200,
+  "location": "Nettoor, Kochi"
+}, {
+  "name": "Chaithanya Ent Hospital",
+  "patient_count": 150,
+  "location": "Model Engineering College Road, Thrikkakara"
+}, {
+  "name": "Chaithanya Eye Hospital And Research Institute",
+  "patient_count": 200,
+  "location": "N H Bypass Road, Vennala Post"
+}, {
+  "name": "City Hospital Pvt Ltd",
+  "patient_count": 200,
+  "location": "Diwans Road, Cochin"
+}, {
+  "name": "Dr Jacobs Eye Care Hospital",
+  "patient_count": 50,
+  "location": "Angamaly"
+}, {
+  "name": "Dr.Tony Fernandezeye Hospital",
+  "patient_count": 100,
+  "location": "Nh Bypass Palarivattom"
+}, {
+  "name": "Eye Foundation Ltd Kochi",
+  "patient_count": 250,
+  "location": "Panayappilly, Kochi"
+}, {
+  "name": "Kochi Eye Care Center",
+  "patient_count": 300,
+  "location": "Kochi"
+}, {
+  "name": "L F Hospital Annex Koonammavu",
+  "patient_count": 100,
+  "location": "Market Road, Edappally"
+}, {
+  "name": "Lakshmi Hospital Aluva",
+  "patient_count": 100,
+  "location": "Ernakulam"
+}, {
+  "name": "Lotus Eye Hospital & Institute",
+  "patient_count": 100,
+  "location": "Kizhakkekara, Muvattupuzha"
+}, {
+  "name": "Muvattupuzha Cooperative Super Speciality Hospital And Research Centre",
+  "patient_count": 100,
+  "location": "Padma Junction, M G Road"
+}, {
+  "name": "Sreyass Nursing Home",
+  "patient_count": 200,
+  "location": "Kadvanthara"
+}, {
+  "name": "Sunrise Institute Of Medical Sciences Pvt Ltd",
+  "patient_count": 250,
+  "location": "Kochi"
+}, {
+  "name": "Susruta Eye Hospital",
+  "patient_count": 300,
+  "location": "Kothamangalam"
+}, {
+  "name": "Anwar Memorial Hospital",
+  "patient_count": 25,
+  "location": "Arakkunnam Thottappady"
+}, {
+  "name": "Alpha Ent Head And Neck Research Institute",
+  "patient_count": 300,
+  "location": "Bridge Road Aluva"
+}, {
+  "name": "Ahalia Foundation Eye Hospital",
+  "patient_count": 25,
+  "location": "Pv Antony Road Eranakulam"
+}, {
+  "name": "Ahalia Foundation Eye Hospital",
+  "patient_count": 30,
+  "location": "Nellikuzhy Eranakulam"
+}, {
+  "name": "Samaritan Hospital (Covid only)",
+  "patient_count": 250,
+  "location": "Angamaly"
+}, {
+  "name": "MBR Medical Trust Specialists Hospital",
+  "patient_count": 100,
+  "location": "Thirumuppam  Varapuzha"
+}, {
+  "name": "Carmel Hospital Asokapuram (Covid only)",
+  "patient_count": 100,
+  "location": "Mavelipuram"
+}, {
+  "name": "P S Mission Hospital",
+  "patient_count": 100,
+  "location": "Cultes-Konam Road, Perumpadappu,  Cochin"
+}, {
+  "name": "Kindorama Healthcare Private Limited (Covid only)",
+  "patient_count": 10,
+  "location": "North Paravur, Ernamkulam"
+}, {
+  "name": "Sreenarayana Institute Of Medical Sciences (Covid only)",
+  "patient_count": 50,
+  "location": "Ravipuram, Cochin"
+}, {
+  "name": "Rajagiri Hospital",
+  "patient_count": 500,
+  "location": "Aluva, Kochi"
+}]
