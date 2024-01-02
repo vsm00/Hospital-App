@@ -1,92 +1,53 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const fs = require('fs');
-
 const app = express();
-const PORT = 3000;
+const data = require('./hospital.json');
+app.use(express.json());
 
-app.use(bodyParser.json());
+// ...................................Read Operation(GET)......................................
+app.get('/hospital', (req, res) =>  res.send(data));
 
-const jsonFilePath = 'hospitalData.json';
+//...................................Create Operation(POST)......................................
+app.post('/hospital', (req, res) => {
+    data.push(req.body);
+    fs.writeFile("hospital.json", JSON.stringify(data), (err, resp) => {
+        if (err) {
+            res.send('Data cannot be writtten');
 
-// Read hospital data from JSON file
-const readData = () => {
-  try {
-    const data = fs.readFileSync(jsonFilePath, 'utf8');
-    return JSON.parse(data);
-  } catch (error) {
-    console.error('Error reading data from JSON file:', error.message);
-    return [];
-  }
-};
-
-// Write hospital data to JSON file
-const writeData = (data) => {
-  try {
-    fs.writeFileSync(jsonFilePath, JSON.stringify(data, null, 2), 'utf8');
-  } catch (error) {
-    console.error('Error writing data to JSON file:', error.message);
-  }
-};
-
-// Get all hospitals
-app.get('/hospitals', (req, res) => {
-  const hospitals = readData();
-  res.json(hospitals);
+        } else {
+            res.send('Data Entered');
+        }
+    })
 });
 
-// Get a specific hospital by name
-app.get('/hospitals/:name', (req, res) => {
-  const hospitals = readData();
-  const hospital = hospitals.find((h) => h.name === req.params.name);
+//...................................Update/Replace Operation(PUT)......................................
+app.put('/hospital/:name', (req, res) => {
+    let name = req.params.name;
+    data.forEach((item) => {
+        if (item.name == name) {
+            item.patient_count = req.body.patient_count;
+            item.location = req.body.location;
+        }
+    })
 
-  if (hospital) {
-    res.json(hospital);
-  } else {
-    res.status(404).json({ error: 'Hospital not found' });
-  }
+    fs.writeFile("hospital.json", JSON.stringify(data), (err, resp) => {
+        if (err) {
+            res.send("Data could not be updated");
+        } else res.send("Data updated");
+    })
 });
 
-// Add a new hospital
-app.post('/hospitals', (req, res) => {
-  const hospitals = readData();
-  const newHospital = req.body;
-
-  hospitals.push(newHospital);
-  writeData(hospitals);
-
-  res.json(newHospital);
+//...................................Delete Operation(DELETE)......................................
+app.delete('/hospital/:name', (req, res) => {
+    let name = req.params.name;
+    let value = data.filter(item => item.name !== name);
+    fs.writeFile("hospital.json", JSON.stringify(value), (err, resp) => {
+        if (err) {
+            res.send("The information cannot be deleted.");
+        } else res.send("Delete Operation Completed");
+    })
 });
 
-// Update a hospital by name
-app.put('/hospitals/:name', (req, res) => {
-  const hospitals = readData();
-  const updatedHospital = req.body;
-  const index = hospitals.findIndex((h) => h.name === req.params.name);
-
-  if (index !== -1) {
-    hospitals[index] = updatedHospital;
-    writeData(hospitals);
-    res.json(updatedHospital);
-  } else {
-    res.status(404).json({ error: 'Hospital not found' });
-  }
-});
-
-// Delete a hospital by name
-app.delete('/hospitals/:name', (req, res) => {
-  const hospitals = readData();
-  const index = hospitals.findIndex((h) => h.name === req.params.name);
-
-  if (index !== -1) {
-    const deletedHospital = hospitals.splice(index, 1)[0];
-    writeData(hospitals);
-    res.json(deletedHospital);
-  } else {
-    res.status(404).json({ error: 'Hospital not found' });
-  }
-});
-
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+//....................................Port Number : 3000 ............................................
+app.listen(3000);
+console.log("Server listening to port 3000 !");
